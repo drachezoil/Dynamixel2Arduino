@@ -51,7 +51,9 @@ const uint16_t model_number_table[] PROGMEM = {
     PRO_M42P_010_S260_R, 
     PRO_M54P_040_S250_R, PRO_M54P_060_S250_R,
     PRO_H42P_020_S300_R, 
-    PRO_H54P_100_S500_R, PRO_H54P_200_S500_R
+    PRO_H54P_100_S500_R, PRO_H54P_200_S500_R,
+	
+	SLAVE_DELTA
 };
 
 const uint8_t model_number_table_count = sizeof(model_number_table)/sizeof(model_number_table[0]);
@@ -233,8 +235,9 @@ bool Dynamixel2Arduino::setProtocol(uint8_t id, float version)
 }
 
 //TODO: Simplify the code by grouping model numbers.
-bool Dynamixel2Arduino::setBaudrate(uint8_t id, uint32_t baudrate)
-{
+bool Dynamixel2Arduino::setBaudrate(uint8_t id, uint32_t baudrate){
+	
+	
   uint16_t model_num = getModelNumberFromTable(id);
   uint8_t baud_idx = 0;
 
@@ -407,6 +410,7 @@ bool Dynamixel2Arduino::setBaudrate(uint8_t id, uint32_t baudrate)
     case PRO_M42P_010_S260_R:
     case PRO_M54P_040_S250_R:
     case PRO_M54P_060_S250_R:
+	case SLAVE_DELTA:
       switch(baudrate)
       {
         case 9600:
