@@ -620,6 +620,9 @@ Slave::processInst(uint8_t inst_idx)
     case DXL_INST_WRITE:
       ret = processInstWrite();
       break;
+	case DXL_INST_SYNC_WRITE: //TODO
+      ret = 1;
+      break;
 
     default:
       last_lib_err_ = DXL_LIB_ERROR_NOT_SUPPORTED;
