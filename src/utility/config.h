@@ -37,6 +37,8 @@
 #define DEFAULT_DXL_BUF_LENGTH       256
 #elif defined (OpenCR)
 #define DEFAULT_DXL_BUF_LENGTH       2048
+#elif defined (__IMXRT1062__)		// Teensy 4.0-4.1
+#define DEFAULT_DXL_BUF_LENGTH       2048
 #else
 #define DEFAULT_DXL_BUF_LENGTH       1024
 #endif
