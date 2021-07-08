@@ -17,6 +17,7 @@
 
 #define ENABLE_ACTUATOR_XL320           1
 #define ENABLE_ACTUATOR_XL330           1
+#define ENABLE_ACTUATOR_XC330           1
 #define ENABLE_ACTUATOR_XL430           1   //Includes 2XL430
 #define ENABLE_ACTUATOR_XC430           1   //Includes 2XC430
 #define ENABLE_ACTUATOR_XM430           1
@@ -85,7 +86,7 @@
 
 #if defined(ARDUINO)
   #include <Arduino.h>
-  #if !defined(ESP_PLATFORM) && !defined(ARDUINO_ARCH_MBED) && !defined(ARDUINO_ARCH_SAMD)
+  #if !defined(ESP_PLATFORM) && !defined(ARDUINO_ARCH_MBED_PORTENTA) && !defined(ARDUINO_ARCH_SAMD)
     #include <avr/pgmspace.h>
   #endif
 #endif
